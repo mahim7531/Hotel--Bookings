@@ -1,4 +1,4 @@
-import User from "../models/user";
+import User from "../models/User.js";
 import { Webhook } from "svix";
 
 
@@ -40,9 +40,7 @@ const clerkWebhooks=async(req,res) =>{
                  await User.findByIdAndDelete(data.id);
                    break;
             } 
-              
-              
-        
+            
             default:
             
             break;
