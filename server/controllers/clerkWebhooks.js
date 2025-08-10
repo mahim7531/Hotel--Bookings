@@ -20,9 +20,9 @@ const clerkWebhooks=async(req,res) =>{
         const {data,type}=req.body
 
         const userData={
-            _id:data.id,
-            email:data.email_addresses[0].email_addresses,
-            username:data.first_name +" "+data.last_name,
+            _id: data.id,
+            email: data.email_addresses[0].email_addresses,
+            username: data.first_name +" "+data.last_name,
             image:data.image_url,
         }
         //Switch Cases for different Events
@@ -32,7 +32,7 @@ const clerkWebhooks=async(req,res) =>{
                  await User.create(userData);
                    break;
             } 
-            case "user.update":{
+            case "user.updated":{
                  await User.findByIdAndUpdate(data.id, userData);
                    break;
             } 
